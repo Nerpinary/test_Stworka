@@ -1,0 +1,150 @@
+p {
+    padding: 0;
+    margin: 0;
+}
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+.main__container {
+    width: 743px;
+    border-radius: 10px;
+    background-color: #3579F5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 18px 15px 22px;
+}
+.container__left {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+.container__progress-bar {
+    --size: 60px;
+    --stroke-width: 4px;
+    --progress: 0;
+    --circumference: calc(2 * 3.1416 * 28px);
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+}
+.container__info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.container__info-label {
+    width: fit-content;
+    background-color: #2364DB;
+    border-radius: 40px;
+    padding: 0 13px;
+    line-height: 18px;
+    font-size: 12px;
+    font-weight: 400;
+}
+.container__info-subtitle {
+    line-height: 20px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.container__info-text {
+    line-height: 18px;
+    font-size: 12px;
+    font-weight: 400;
+}
+.container__button {
+    background-color: #fff;
+    color: #4777ED;
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 20px;
+    border: none;
+    cursor: pointer;
+}
+.container__button:hover {
+    background-color: aliceblue;
+    transition: background-color 0.35s ease-in-out;
+}
+.container__progress-bar {
+    --size: 60px;
+    --progress: 0;
+    --circumference: calc(2 * 3.1416 * 28px);
+    --initial-dashoffset: calc(var(--circumference) - 3.5px);
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+}
+.progress-ring {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.progress-ring svg {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+}
+.progress-ring__background {
+    stroke: rgba(255, 255, 255, 0.5);
+    stroke-width: 1px;
+    fill: transparent;
+}
+.progress-ring__circle {
+    stroke: #fff;
+    stroke-width: 2px;
+    fill: transparent;
+    r: 28;
+    cx: 30;
+    cy: 30;
+    stroke-dasharray: var(--circumference);
+    stroke-dashoffset: var(--initial-dashoffset);
+    transition: stroke-dashoffset 0.35s;
+    stroke-linecap: round;
+}
+.progress-ring__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #fff;
+}
+.container__progress-bar[data-progress="0"] {
+    --progress: 0;
+}
+.container__progress-bar[data-progress="1"] {
+    --progress: 14.29;
+}
+.container__progress-bar[data-progress="2"] {
+    --progress: 28.57;
+}
+.container__progress-bar[data-progress="3"] {
+    --progress: 42.86;
+}
+.container__progress-bar[data-progress="4"] {
+    --progress: 57.14;
+}
+.container__progress-bar[data-progress="5"] {
+    --progress: 71.43;
+}
+.container__progress-bar[data-progress="6"] {
+    --progress: 85.71;
+}
+.container__progress-bar[data-progress="7"] {
+    --progress: 100;
+}
+.progress-ring__circle {
+    stroke-dashoffset: calc(var(--initial-dashoffset) - (var(--circumference) * var(--progress) / 100));
+}

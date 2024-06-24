@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>test_Stworka</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+        <link href="./style.css" rel="stylesheet">
+    </head>
+    <body>
+        <main>
+            <aside class="main__container container">
+                <div class="container__left">
+                    <div class="container__progress-bar" data-progress="0">
+                        <div class="container__progress-ring progress-ring">
+                            <svg width="60" height="60">
+                                <circle class="progress-ring__background" cx="30" cy="30" r="28" />
+                                <circle class="progress-ring__circle" cx="30" cy="30" r="28" />
+                            </svg>
+                            <div class="progress-ring__text">0/7</div>
+                        </div>
+                    </div>
+                    <div class="container__info-block">
+                        <label class="container__info-label">Чеклист</label>
+                        <p class="container__info-subtitle">Выполнено: 0 из 7 действий</p>
+                        <p class="container__info-text">Следующее действие: Созвониться с клиентом до 23.05.24 12:00</p>
+                    </div>
+                </div>
+                <button class="container__button">Открыть чеклист</button>
+            </aside>
+        </main>
+    </body>
+</html>
